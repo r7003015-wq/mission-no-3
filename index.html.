@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Royal Friendship Proposal | Bellshore 👑</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#100d1c;color:#fff4df;
+ font-family:Georgia,serif;text-align:center;
+}
+.page{
+ display:none;min-height:100vh;padding:30px 16px;
+ align-items:center;justify-content:center;flex-direction:column;
+ background:linear-gradient(#130d25e8,#100d1de8),
+ url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80")
+ center/cover fixed;overflow:hidden;
+}
+.page.active{display:flex}
+h1{color:#f4d38a;font-size:clamp(30px,6vw,48px);text-shadow:0 0 15px #e9b95b66}
+h2{color:#eecb85}
+p{line-height:1.8}
+button{
+ background:#a87938;color:#fff8e8;border:1px solid #f1d49b;
+ padding:13px 24px;border-radius:30px;font-size:16px;
+ cursor:pointer;margin:10px;font-family:Georgia,serif;
+ transition:.3s;
+}
+button:hover{background:#d09b4f;transform:scale(1.05)}
+.card{
+ width:min(750px,96%);background:#251b32ef;
+ border:2px solid #c99d59;border-radius:16px;
+ padding:25px;box-shadow:0 0 30px #0009;
+}
+.parchment{
+ width:min(760px,96%);padding:35px 25px;
+ color:#392515;
+ background:linear-gradient(135deg,#ead3a2,#d8b77d,#f0dcae);
+ border:12px ridge #986b39;
+ box-shadow:0 15px 40px #000b,inset 0 0 35px #80532966;
+ text-align:left;
+}
+.parchment h2{color:#653c1e;text-align:center}
+.letter-text{white-space:pre-line;font-size:16px;line-height:1.9}
+.seal{
+ width:90px;height:90px;border-radius:50%;
+ background:radial-gradient(circle at 30% 25%,#e36d59,#8e1518 65%,#4d080e);
+ color:#ffe2a0;border:5px double #e8b86b;
+ display:flex;align-items:center;justify-content:center;
+ font-size:38px;margin:25px auto 0;
+ box-shadow:0 0 20px #e9ad5266;transform:rotate(-10deg);
+}
+.owl{font-size:70px;animation:fly 3s ease-in-out}
+@keyframes fly{
+ 0%{transform:translate(-40vw,-20vh) scale(.2);opacity:0}
+ 70%{transform:translate(0,0) scale(1.2);opacity:1}
+ 100%{transform:scale(1);opacity:1}
+}
+.question{
+ text-align:left;background:#392a3e;padding:16px;
+ margin:14px 0;border-radius:12px;border:1px solid #a9824f;
+}
+.question p{margin-top:0}
+.answer{font-size:14px;color:#f4d38a;min-height:22px;margin-top:8px}
+.gifts{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+ gap:15px;width:min(700px,95%);
+}
+.gift{
+ background:#33233d;border:1px solid #d6ad6d;
+ border-radius:15px;padding:25px 12px;cursor:pointer;
+ font-size:19px;transition:.3s;
+}
+.gift:hover{background:#59405a;transform:translateY(-6px);box-shadow:0 0 20px #f6d68a55}
+.gift-content{display:none;margin-top:25px}
+.gift-content.show{display:block;animation:reveal 1s ease-out}
+@keyframes reveal{
+ 0%{opacity:0;transform:scale(.75) translateY(20px)}
+ 70%{transform:scale(1.03)}
+ 100%{opacity:1;transform:scale(1)}
+}
+.magic-spark{
+ position:fixed;z-index:99999;pointer-events:none;
+ font-size:22px;color:#ffe59b;text-shadow:0 0 12px #ffd76a;
+ animation:burst 1.5s ease-out forwards;
+}
+@keyframes burst{
+ 0%{opacity:0;transform:translate(0,0) scale(.2)}
+ 20%{opacity:1}
+ 100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.7) rotate(180deg)}
+}
+.floating-star{
+ position:fixed;z-index:1;pointer-events:none;color:#ffe5a3;
+ text-shadow:0 0 12px #ffd76a;animation:floatStar 4s ease-in-out infinite;
+}
+@keyframes floatStar{
+ 0%,100%{opacity:.15;transform:translateY(0) scale(.7)}
+ 50%{opacity:1;transform:translateY(-25px) scale(1.2)}
+}
+.small{font-size:13px;color:#e6cda5}
+@media(max-width:500px){
+ .parchment{padding:25px 17px}
+ .letter-text{font-size:14px}
+ .card{padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: WELCOME -->
+<section class="page active" id="page1">
+ <h1>🏰 Welcome to Hogwarts 🪄</h1>
+ <p>✨ Your ordinary life is about to get a little more magical...</p>
+ <p>🌙 From now on, things are never going to be the same!</p>
+ <button onclick="showPage(2)">💌 Tap to know why you are here ✨</button>
+</section>
+
+<!-- PAGE 2: ROYAL LETTER -->
+<section class="page" id="page2">
+ <h1>🦉 A Royal Delivery!</h1>
+ <div class="owl">🦉</div>
+ <p>✨ Your special letter has arrived...</p>
+
+ <div class="parchment">
+  <h2>📜 A Royal Letter from Bellshore</h2>
+  <div class="letter-text">Congratulations!
+
+You are now being considered for the position of her one and only Bewakoof Best Friend.
+
+Your Royal Duties 📜
+
+First of all, you have to follow every order of hers without any objections. Whatever she says, you have to do it, anyhow. No arguments, no excuses. The Queen's orders are the Queen's orders
+
+Secondly, you are not allowed to keep secrets from her. You have to tell her EVERYTHING — every little story, every adventure you had during the day and all the random things that happened. And don't forget your daily updates after 11 PM. That's when the Queen is finally free from her chores (well, sometimes she gets late because of her never-ending workload). But don't worry, you won't be punished if you're late sometimes. The Queen is generous like that! Just make sure you show up every day.
+
+And lastly, you must tolerate her random bakwaas, unnecessary drama, mood swings and all the nonsense she comes up with. Getting annoyed is allowed, but leaving is not!
+
+The salary is zero, the workload is unlimited, and resignation is strictly prohibited. There are no refunds either.
+
+So, are you ready to accept this lifetime position and become the Queen's favourite Bewakoof?
+
+With love and a little attitude,
+The Queen of Bellshore 👑</div>
+  <div class="seal">♛</div>
+  <p style="text-align:center">Official Seal of the Queen of Bellshore 👑</p>
+ </div>
+ <button onclick="showPage(3)">📜 Continue to your next task ➜</button>
+</section>
+
+<!-- PAGE 3: EXAMINATION INTRO -->
+<section class="page" id="page3">
+ <div class="card">
+  <h1>✨ The Royal Examination ✨</h1>
+  <p>Dear Candidate, before the Queen makes her final decision, you must answer a few important questions. 👑</p>
+  <p>Choose your answers wisely. The Royal Council is watching! 👀</p>
+  <button onclick="showPage(4)">🪄 Begin the questionnaire</button>
+ </div>
+</section>
+
+<!-- PAGE 4: QUESTIONS 1-6 -->
+<section class="page" id="page4">
+ <div class="card">
+  <h1>👑 The Queen's Question Room</h1>
+  <p>✨ Royal questionnaire • Answer carefully, Your Highness!</p>
+  <h2>📜 Part 1 – Basic Royal Eligibility</h2>
+  <div id="questions1"></div>
+  <button onclick="showPage(5)">➡️ Continue to serious matters</button>
+ </div>
+</section>
+
+<!-- PAGE 5: QUESTIONS 7-10 -->
+<section class="page" id="page5">
+ <div class="card">
+  <h1>💭 A Few Serious Matters</h1>
+  <p>Not Too Serious! 👑</p>
+  <div id="questions2"></div>
+  <button onclick="showPage(6)">✨ Submit your royal answers</button>
+ </div>
+</section>
+
+<!-- PAGE 6: ANNOUNCEMENT -->
+<section class="page" id="page6">
+ <div class="card">
+  <h1>👑 OFFICIAL ROYAL ANNOUNCEMENT</h1>
+  <p>After reviewing all your answers, the Royal Council of Bellshore is pleased to announce that you are officially appointed as the Queen's BEST FRIEND!</p>
+  <p>Congratulations! Your position is now permanent. Remember, this friendship is for a lifetime, and there's absolutely no resignation policy.</p>
+  <p>Thank you for answering all the questions. The Queen is delighted to have you on board!</p>
+  <h2>🪄 Welcome to the Royal Friendship Club! 🪄</h2>
+  <button onclick="showPage(7)">🎁 Collect your gifts</button>
+ </div>
+</section>
+
+<!-- PAGE 7: GIFTS -->
+<section class="page" id="page7">
+ <h1>🎁 Here's Some Gifts for You 🎁</h1>
+ <p>Choose your royal gift, Your Highness! ✨</p>
+
+ <div class="gifts">
+  <div class="gift" onclick="openGift(1)">🎂<br>Gift No. 1<br><small>Birthday Wish</small></div>
+  <div class="gift" onclick="openGift(2)">💌<br>Gift No. 2<br><small>A Letter</small></div>
+  <div class="gift" onclick="openGift(3)">🎀<br>Gift No. 3<br><small>One Last Thing</small></div>
+ </div>
+
+ <div class="card gift-content" id="gift1">
+  <h2>🎂 Happy Birthday!</h2>
+  <p>I know it's your bday, gentlemen, that's why I chose this day for my friendship proposal so we remember the date when we became friends and once again happy happy happy birthday my future bestfriend.</p>
+ </div>
+
+ <div class="parchment gift-content" id="gift2">
+  <h2>💌 A Letter For You</h2>
+  <div class="letter-text">Sooo, here we areeee🙌🏻💐
+
+You know me, I think, for many years now, but today I'm asking you once again to be my best friend.
+
+I know I made too many mistakes the first time, and that's why now I've become the first girl who made you cry. I hate it, literally. I never wanted a boy to cry bcoz of me, but somehow I did that. And now I can't fix things because everything has turned out so badly.( try kiyaa but syd nhi ata ache se jitna kharab Krna ata h)
+
+But once again, can you be my bevkooffff best friend?  AGAIN 
+I'm not saying that we won't have fights or misunderstandings. I know firse m kuch krkee teraa mood kharab krungii hi isliye but plssss from now on, I'll take care ki naa kruu kuch pkaaa (syd Krli care baki bolnaa hi ata h bass krna nhi hota )🥲
+
+And I know this too, now you're probably thinking, "She's so changed" or  something like that like bhutt changee hogyi baki pta hi h sooo sorryyyyy for all thisss. 
+I'm really not going anywhere. I'll always be in your DMs, okayyy? So don't worry, boyyy 
+
+And also, be your 
+BF ✨.....pkaa vali 
+
+And about that thing I told you earlier, bhut barr butt I know u can't forget the things that happened, the time you cried, or the times you felt disappointed. Buttt plssssss. And yaaa, that thing I said on this day was just a joke. It's not serious. I'm not saying that you're not my best friend anymore.
+
+Andddd yaaaa, HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY BIRTHDAYYYYY, my fragile babyyyy! 🍼🐥🥳🩷💐 Also, my bevkoofffff best friend, rakshas insannnn orrr savbb bhi naaa .....👀🫂
+
+ I think I haven't done that much to make you happy, but plssss be happy, at least for one day of the year. Put aside all the things that are bothering you. It's yourrr bevkooffffffffff walaaaa din hn ajjjj, tohh naa! 🥳🎂
+
+Isliyeee hnn, abb smileeee 😊 krooo acheee seeee! Thodi sii bhi chalegiii! 🥲
+
+Orrrr abb ronaaa tohh mttt plssss</div>
+ </div>
+
+ <div class="card gift-content" id="gift3">
+  <h2>🎀 One Last Thing!</h2>
+  <p>For seeing this gift, you have to send the Queen a letter - did you like it or not, her proposal, then the gift will be delivered to you</p>
+ </div>
+
+ <button onclick="showPage(8)">🌟 Finish the royal journey</button>
+</section>
+
+<!-- PAGE 8: THANK YOU -->
+<section class="page" id="page8">
+ <div class="card">
+  <h1>🌙 The End... Or A New Beginning? ✨</h1>
+  <h2>Thank You! ❤️</h2>
+  <p>Thank you for giving your time and patience. Thank you for accepting our proposal.</p>
+  <h1>👑🪄💐</h1>
+  <p class="small">With love, The Queen of Bellshore</p>
+ </div>
+</section>
+
+<script>
+const questionData = [
+[
+["Do you officially accept the position of the Queen's Bewakoof Best Friend?","Excellent! The Queen approves. 👑","Excuse me? The Queen needs an explanation."],
+["Will you tolerate the Queen's unlimited bakwaas without complaining?","That's the spirit!","Your application is under reconsideration."],
+["Will you give the Queen your daily updates after 11 PM?","Your attendance is appreciated.","The Queen would like to have a word with you."],
+["Will you stay even when the Queen is being extra dramatic?","A loyal subject indeed!","Hmm, interesting choice..."],
+["Do you promise not to replace the Queen with another best friend?","The Queen is pleased.","Security, please check this answer! 😭"],
+["Are you ready for a lifetime of friendship, madness and unlimited nonsense?","WELCOME TO THE ROYAL FAMILY! ❤️","There is no exit door, Your Highness."]
+],
+[
+["Sometimes, during a fight, the Queen might say something in anger. Will you tell her honestly if she hurts you instead of keeping it to yourself?","Good! The Queen appreciates honest complaints.","Who gave you permission to keep everything to yourself?"],
+["Will you tell the Queen whenever something is bothering you, whether it's about your life or anything happening around you?","Excellent! Daily gossip and life updates are officially encouraged.","Then what's the point of having a royal best friend?"],
+["The Queen isn't perfect and sometimes messes things up. Will you handle all the troubles she made?","Loyal subject detected!","The Queen would like to reconsider your application."],
+["The Queen is a little complicated and sometimes difficult to understand. Knowing that, will you still accept this opportunity?","Brave decision. You have been warned!","Unfortunately, the Queen doesn't have a replacement ready."]
+]
+];
+
+function makeQuestions(){
+ questionData.forEach((group,g)=>{
+  const container=document.getElementById(g===0?"questions1":"questions2");
+  group.forEach((q,i)=>{
+   const number=g===0?i+1:i+7;
+   const div=document.createElement("div");
+   div.className="question";
+   div.innerHTML=`
+    <p><b>${number}. ${q[0]}</b></p>
+    <button onclick="answer(${number},true)">YES ✨</button>
+    <button class="back" onclick="answer(${number},false)">NO 🙈</button>
+    <div class="answer" id="answer${number}"></div>`;
+   container.appendChild(div);
+  });
+ });
+}
+
+function answer(number,yes){
+ const g=number<=6?0:1;
+ const index=number<=6?number-1:number-7;
+ const message=questionData[g][index][yes?1:2];
+ document.getElementById("answer"+number).textContent=message;
+ if(yes) sparkleBurst(25);
+}
+
+function showPage(number){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById("page"+number).classList.add("active");
+ window.scrollTo(0,0);
+ if(number===6) sparkleBurst(45);
+ if(number===7) makeFloatingStars();
+}
+
+function openGift(number){
+ document.querySelectorAll(".gift-content").forEach(g=>g.classList.remove("show"));
+ document.getElementById("gift"+number).classList.add("show");
+ sparkleBurst(35);
+}
+
+function sparkleBurst(amount){
+ const symbols=["✦","✧","✨","⭐","💫"];
+ for(let i=0;i<amount;i++){
+  const star=document.createElement("span");
+  star.className="magic-spark";
+  star.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  star.style.left=(Math.random()*100)+"vw";
+  star.style.top=(Math.random()*75+10)+"vh";
+  star.style.setProperty("--dx",(Math.random()*300-150)+"px");
+  star.style.setProperty("--dy",(Math.random()*300-150)+"px");
+  document.body.appendChild(star);
+  setTimeout(()=>star.remove(),1600);
+ }
+}
+
+let starsMade=false;
+function makeFloatingStars(){
+ if(starsMade)return;
+ starsMade=true;
+ for(let i=0;i<22;i++){
+  const star=document.createElement("span");
+  star.className="floating-star";
+  star.textContent="✧";
+  star.style.left=Math.random()*100+"vw";
+  star.style.top=Math.random()*100+"vh";
+  star.style.fontSize=(12+Math.random()*20)+"px";
+  star.style.animationDelay=Math.random()*4+"s";
+  document.body.appendChild(star);
+ }
+}
+
+makeQuestions();
+</script>
+
+</body>
+  </html>
+  
